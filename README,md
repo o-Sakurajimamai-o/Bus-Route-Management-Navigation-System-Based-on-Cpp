@@ -1,0 +1,51 @@
+# Bus Route Management & Navigation System
+
+A comprehensive C++ console application for urban bus route management and navigation. This project was developed as a Data Structures and Algorithms coursework, featuring standard graph theory algorithms built entirely from scratch.
+
+## Key Features
+
+The system provides an interactive CLI with 10 core capabilities:
+
+1. **Shortest Path Routing:** Calculates the shortest distance between any two stations using **Dijkstra's Algorithm**.
+2. **Minimum Cost Routing:** Finds the most economical route based on edge weights (ticket prices).
+3. **K-Shortest Paths:** Computes the top *K* alternative shortest paths using the **A* Search Algorithm**.
+4. **Path Counting:** Determines the total number of valid shortest and lowest-cost paths between two nodes.
+5. **Minimum Transfers:** Finds the route requiring the fewest bus changes using **Breadth-First Search (BFS)**.
+6. **Network Connectivity & MST:** Uses **Kruskal's Algorithm** and **Union-Find (Disjoint Set)** to compute the Minimum Spanning Tree and identify isolated subnetworks.
+7. **Dynamic Graph Modification:** Supports real-time addition and deletion of bus routes (edges) on the fly.
+8. **Station Lookup:** Query detailed adjacency information for all or specific bus stations.
+
+## Data Structures
+
+To maximize performance and demonstrate algorithmic rigor, this project relies on custom-built core data structures:
+
+* **Graph Representation:** Array-based Adjacency List for compact memory usage, fast random access, and cache locality—ideal for dense graphs.
+* **Custom Priority Queue:** Instead of relying solely on `<queue>`, a custom templated Min-Heap (`namespace priority`) was implemented from scratch. This custom heap powers both the Dijkstra and A* optimizations.
+* **Disjoint Set (Union-Find):** Implemented with path compression (`find` function) for $O(1)$ amortized time complexity during MST construction.
+
+## Compilation & Usage
+
+This project has no external dependencies and uses standard C++ libraries. It can be compiled with any modern C++ compiler (e.g., GCC, Clang, or MSVC).
+
+```bash
+# Compile the source code (Optimization flag -O2 is recommended)
+g++ -o bus_system 公交线路管理系统.cpp -O2
+
+# Run the executable
+./bus_system
+
+## Initialization & Sample Input
+Upon starting, the system will prompt you to initialize the graph. You can input the total number of stations, total routes, followed by [Start] [End] [Cost] [Distance] for each route.
+
+```bash
+9   // Total stations
+8   // Total edges
+1 2 2 3
+1 4 1 4
+2 6 3 7
+4 6 6 9
+5 3 11 12
+2 7 17 21
+3 7 100 100
+8 9 0 0
+```
