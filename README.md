@@ -36,7 +36,8 @@ g++ -o bus_system 公交线路管理系统.cpp -O2
 
 ## Initialization & Sample Input
 Upon starting, the system will prompt you to initialize the graph. You can input the total number of stations, total routes, followed by [Start] [End] [Cost] [Distance] for each route.
-
+```
+## Input as Sample
 ```bash
 9   // Total stations
 8   // Total edges
